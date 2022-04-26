@@ -1,0 +1,55 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+<div class="container"><!--container means it will create page with margin right and left-->
+    <div class="p-4 m-4">
+        <div class="col-lg-5 mx-auto border rounded pt-4">
+            <h3 class="alert alert-light border rounded">Create An Account</h3>
+            <form action="/add" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                <!--First Name-->
+                <div class="form-group">
+                    <label for="exampleinputfirstname1">First Name</label>
+                    <input type="text" name="firstname" class="form-control form-control-sm" id="exampleinputfirstname1"
+                       value="{{values.firstname}}"    placeholder="First Name">
+                </div>
+                <!--Last Name-->
+                <div class="form-group">
+                    <label for="exampleinputlastname1">Last Name</label>
+                    <input type="text" name="lastname" class="form-control form-control-sm" id="exampleinputlastname1"
+                          value="{{values.lastname}}" placeholder="Last Name">
+                </div>
+
+                <!--Email-->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control form-control-sm" id="exampleInputEmail1"
+                          value="{{values.email}}" placeholder="example@gmail.com">
+                </div>
+                <!--Password-->
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control form-control-sm"
+                           id="exampleInputPassword1" placeholder="*****">
+                </div>
+                 <!--Mobile-->
+                <div class="form-group">
+                    <label for="exampleinputMobile1">Mobile</label>
+                    <input type="text" name="phone" class="form-control form-control-sm " id="exampleinputMobile1"
+                          value="{{values.phone}}" placeholder="9643238972">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-sm btn-info" value="Create Account">
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
