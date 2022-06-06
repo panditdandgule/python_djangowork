@@ -1,0 +1,31 @@
+{% extends 'students\base.html' %}
+
+{% block content %}
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>AGE</td>
+        <td>EMAIL</td>
+        <td>ADDRESS</td>
+        <td>Actions</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for stud in studlist %}
+    <tr>
+        <td>{{stud.id}}</td>
+        <td>{{stud.name}}</td>
+        <td>{{stud.age}}</td>
+        <td>{{stud.email}}</td>
+        <td>{{stud.address}}</td>
+        <td>
+            <a href="/students/edit/{{stud.id}}">EDIT</a>
+            <a href="/students/delete/{{stud.id}}">DELETE</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

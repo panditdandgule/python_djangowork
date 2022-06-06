@@ -1,0 +1,37 @@
+{% extends 'students\base.html' %}
+
+{% block content %}
+<form method="POST" action="/students/edit/">
+    {% csrf_token %}
+    <table>
+        <div>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" value="{{student.name}}"></td>
+            </tr>
+        </div>
+        <div>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" name="age" value="{{student.age}}"></td>
+            </tr>
+        </div>
+        <div>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" value="{{student.email}}"></td>
+            </tr>
+        </div>
+        <div>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="address" value="{{student.address}}"></td>
+            </tr>
+        </div>
+        <div>
+            <td><input type="submit" value="Update"></td>
+        </div>
+    </table>
+
+</form>
+{% endblock %}

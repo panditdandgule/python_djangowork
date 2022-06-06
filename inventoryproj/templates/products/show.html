@@ -1,0 +1,32 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>PRICE</td>
+        <td>VENDOR</td>
+        <td>ACTIONS</td>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for prod in products%}
+    <tr>
+        <td>{{prod.id}}</td>
+        <td>{{prod.name}}</td>
+        <td>{{prod.price}}</td>
+        <td>{{prod.vendor}}</td>
+        <td>
+            <a href="/products/edit/{{prod.id}}">EDIT</a>
+            <a href="/products/delete/{{prod.id}}">DELETE</a>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center><h1>List Of Employee</h1></center>
+<center>
+<table border="1">
+    <thead>
+    <tr>
+        <td> ID</td>
+        <td> Name</td>
+        <td> Age</td>
+        <td> Pincode</td>
+        <td> Email</td>
+        <td> Address</td>
+        <td>Actions</td>
+    </tr>
+    </thead>
+    <tbody>
+        {% for emp in emplist %}
+        <tr>
+            <td>{{emp.id}}</td>
+             <td>{{emp.name}}</td>
+             <td>{{emp.age}}</td>
+             <td>{{emp.pincode}}</td>
+             <td>{{emp.email}}</td>
+             <td>{{emp.address}}</td>
+             <td>
+                 <a href="/employee/edit/{{emp.id}}">EDIT</a>
+                 <a href="/employee/delete/{{emp.id}}">DELETE</a>
+             </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</center>
+{% endblock %}

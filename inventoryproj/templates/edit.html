@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="/employee/save/">
+    {% csrf_token %}
+    <table border="1">
+
+        Employee Id : <input type="number" name="eid" readonly value="{{emp.id}}"><br><br>
+        Employee Name : <input type="text" name="name" value="{{emp.name}}"> <br><br>
+        Employee Age : <input type="number" name="age" value="{{emp.age}}"> <br><br>
+        Employee Email : <input type="text" name="email" value="{{emp.email}}"> <br><br>
+        Employee Address : <input type="text" name="address" value="{{emp.address}}"> <br><br>
+        Employee Pincode : <input type="number" name="pincode" value="{{emp.pincode}}"> <br><br>
+        <input type="submit" value="Submit">
+
+    </table>
+
+</form>
+{% endblock %}
