@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+<form method="POST" action="{% url 'students:update' student.id %}">
+        {% csrf_token %}
+        <div>
+            <label>First Name: </label>
+            <input type="text" name="firstname" value="{{student.firstname}}">
+        </div><br>
+        <div>
+            <label>Last Name: </label>
+            <input type="text" name="lastname" value="{{student.lastname}}">
+        </div><br>
+        <div>
+            <label>Age: </label>
+            <input type="number" name="age" value="{{student.age}}">
+        </div>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+</html>

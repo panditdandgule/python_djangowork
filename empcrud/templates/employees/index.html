@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Employees</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<h1>List Of Employees</h1><hr>
+<a href="{% url 'employees:add' %}" style="float:right;">Add New Employee</a>
+<div style="clear:both;"></div><br>
+    <table style="width: 100%;">
+        <thead>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Age</td>
+            <td colspan="2">Actions</td>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+            <tr>
+                <td>{{emp.firstname}}</td>
+                <td>{{emp.lastname}}</td>
+                <td>{{emp.age}}</td>
+                <td><a href="{% url 'employees:edit' employee.id %}">edit</a></td>
+                <td><a href="{% url 'employees:delete' employee.id %}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

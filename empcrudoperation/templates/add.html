@@ -1,0 +1,65 @@
+{% include 'base.html' %}
+
+{% block content %}
+<center><h2>Add New Employee </h2></center><br>
+<form method="POST" action="/employee/save/">
+  {% csrf_token %}
+  <center>
+  <table>
+  <div>
+    <tr>
+    <td>First Name:<td>
+      <td><input type="text" name="firstname"></td>
+    </tr>
+    </div>
+     <div>
+    <tr>
+    <td>Last Name:<td>
+      <td><input type="text" name="lastname"></td>
+    </tr>
+    </div>
+    <td>Age:<td>
+      <td><input type="text" name="age"></td>
+    </tr>
+    </div>
+   </div>
+    <td>Phone Number:<td>
+      <td><input type="text" name="phone"></td>
+    </tr>
+    </div>
+    </div>
+    <td>DateOfBirth:<td>
+      <td><input type="text" name="dob"></td>
+    </tr>
+    </div>
+    </div>
+    <td>Email:<td>
+      <td><input type="text" name="email"></td>
+    </tr>
+    </div>
+    </div>
+    <td>Address:<td>
+      <td><input type="text" name="address"></td>
+    </tr>
+    </div>
+    </div>
+    <td>Pincode:<td>
+      <td><input type="text" name="pincode"></td>
+    </tr>
+    </div>
+    <div>
+        <td>
+      <button type="submit" formaction="#">
+            Submit
+        </button>
+
+        <button type="submit" formaction="/employee/">
+            Cancel
+        </button>
+        </td>
+</div>
+  </table>
+
+</center>
+</form>
+{% endblock %}

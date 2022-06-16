@@ -1,0 +1,20 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+<form action="/employee/save/" method="POST">
+    {% csrf_token %}
+    <table border="1">
+        First Name : <input type="text" name="first_name"> <br><br>
+        Last Name : <input type="text" name="last_name"> <br><br>
+        Age : <input type="text" name="age"> <br><br>
+        <!--Gender: <input type="radio" value="Male">Male <input type="radio" value="Female">Female <input type="radio" value="Other">Other-->
+       <!-- Date of Birth :  <input type="date" name="DOB" max="2030-31-12">-->
+        Mobile:<input type="number" name="mobile_number">
+        Email : <input type="text" name="email"> <br><br>
+        Address : <input type="text" name="address"> <br><br>
+        <!--Profile Image : <input type="file" name="myImage" accept="image/png, image/gif, image/jpeg" />-->
+        <input type="submit"> <br><br>
+    </table>
+
+</form>
+{% endblock %}

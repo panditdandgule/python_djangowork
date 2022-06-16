@@ -1,0 +1,22 @@
+{% include 'base.html' %}
+
+{% block content %}
+<center><h2>Update Employee </h2></center><br>
+<form method="POST" action="/employee/save/">
+  {% csrf_token %}
+  <table>
+
+    First Name:<input type="text" name="firstname" value="{{employee.firstname}}"><br><br>
+    Last Name:<input type="text" name="lastname" value="{{employee.lastname}}"><br><br>
+    Age:<input type="text" name="age" value="{{employee.age}}"><br><br>
+    Phone Number:<input type="text" name="phone" value="{{employee.phone}}"><br><br>
+    DateOfBirth:<input type="date" name="dob" value="{{employee.dob}}"><br><br>
+    Email:<input type="text" name="email" value="{{employee.email}}"><br><br>
+    Address:<input type="text" name="address" value="{{employee.address}}"><br><br>
+    Pincode:<input type="text" name="pincode" value="{{employee.pincode}}"><br><br>
+   <input type="submit" value="Update">
+
+  </table>
+
+</form>
+{% endblock %}

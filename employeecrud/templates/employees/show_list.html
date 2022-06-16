@@ -1,0 +1,48 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+ <center><h2>List Of Employees </h2></center><br>
+<div>
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>FIRST NAME</td>
+        <td>LAST NAME</td>
+        <td>AGE</td>
+       <!-- <td>GENDER</td>-->
+       <!-- <td>DOB</td>-->
+        <td>MOBILE</td>
+        <td>EMAIL</td>
+        <td>ADDRESS</td>
+        <!--<td>PROFILE IMAGE</td>-->
+        <td>ACTIONS</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for emp in emplist%}
+    <tr>
+        <td>{{emp.emp_id}}</td>
+        <td>{{emp.first_name}}</td>
+        <td>{{emp.last_name}}</td>
+        <td>{{emp.age}}</td>
+       <!-- <td>{{emp.gender}}</td>-->
+        <!--<td>{{emp.date_of_birth}}</td>-->
+        <td>{{emp.mobile_number}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.address}}</td>
+        <!--<td><img src="{{emp.profileimage.url}}" alt=""> </td>-->
+        <td>
+             <a href="/employee/edit/{{emp.emp_id}}">EDIT</a>
+            <a href="/employee/delete/{{emp.emp_id}}">DELETE</a>
+        </td>
+
+
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+</table>
+    </div>
+{% endblock %}

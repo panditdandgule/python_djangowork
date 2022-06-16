@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<a href="/employee/">HOME</a> <br><br><br>
+        <center><h2>Edit Employee </h2></center><br>
+    <form action="/employee/save/" method="post">
+        {% csrf_token %}
+         Employee Id : <input type="text" name="emp_id" readonly value="{{emp.emp_id}}"><br><br>
+        First Name : <input type="text" name="first_name"> <br><br>
+        Last Name : <input type="text" name="last_name"> <br><br>
+        Age : <input type="text" name="age"> <br><br>
+        <!--Gender: <input type="radio" value="Male">Male <input type="radio" value="Female">Female <input type="radio" value="Other">Other-->
+       <!-- Date of Birth :  <input type="date" name="DOB" max="2030-31-12">-->
+        Mobile:<input type="number" name="mobile_number">
+        Email : <input type="text" name="email"> <br><br>
+        Address : <input type="text" name="address"> <br><br>
+        <!--Profile Image : <input type="file" name="myImage" accept="image/png, image/gif, image/jpeg" />-->
+        <input type="submit"> <br><br>
+    </form>
+
+</body>
+</html>

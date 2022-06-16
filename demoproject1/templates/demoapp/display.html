@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employee</title>
+    <link rel="stylesheet" href="{% static 'css/style.css '%}">
+</head>
+<body>
+<h1>Welcome to Student Data</h1>
+{% for stud in stud_dict%}
+{{stud}}
+{%endfor%}
+</body>
+</html>

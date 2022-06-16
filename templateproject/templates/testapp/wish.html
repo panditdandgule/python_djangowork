@@ -1,0 +1,20 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Template Page</title>
+    <style>
+        h1{
+        color:white;
+        background:red;
+
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+</head>
+<body>
+<h1>Welcome to the second hero of MVT:Templates</h1>
+<img src="{%static 'images/new.jpg' %}" alt="">
+</body>
+</html>

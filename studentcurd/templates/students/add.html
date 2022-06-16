@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+<form method="POST" action="{% url 'students:insert' %}">
+    {% csrf_token %}
+    <div>
+        <label>First Name</label>
+        <input type="text" name="firstname">
+    </div><br>
+    <div>
+        <label>Last Name</label>
+        <input type="text" name="lastname">
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="number" name="age">
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+
+</form>
+</body>
+</html>
