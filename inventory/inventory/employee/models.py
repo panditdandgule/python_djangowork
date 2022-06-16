@@ -1,0 +1,14 @@
+from django.db import models
+
+# Create your models here.
+class Employee(models.Model):
+    name=models.CharField(max_length=30)
+    age=models.IntegerField()
+    email=models.EmailField()
+    address=models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'''{self.name}'''
+
+    class Meta:
+        db_table='employees'

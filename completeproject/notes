@@ -1,0 +1,8 @@
+home.html
+line no27
+<!--
+                 Always use the {% url %} template tag to compose the
+                 applications URLs. The first parameter is the name of the URL
+                 (defined in the URLconf, i.e., the urls.py),
+                 then you can pass an arbitrary number of arguments as needed.
+                 -->
